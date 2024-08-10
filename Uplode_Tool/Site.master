@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    CHOLA UPLOAD UTILITY
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                   <%-- <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>--%>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Visual_IVR_Blaster.aspx" Text="Upload Data"/>
+                         <%-- <asp:MenuItem NavigateUrl="~/Upload_PAYMENT.aspx" Text="Upload_PAYMENT"/>
+                        <asp:MenuItem NavigateUrl="~/FLAG.aspx" Text="Upload_FLAG"/>
+                        <asp:MenuItem NavigateUrl="~/TMFL_new.aspx" Text="Upload Contract"/>--%>
+                       <%-- <asp:MenuItem NavigateUrl="~/TransferToCallingList.aspx" Text="TransferToCalling List"/>--%>
+                        <%--<asp:MenuItem NavigateUrl="~/UPLOAD_PAYMENT.aspx" Text="UPLOAD_PAYMENT"/>
+                        <asp:MenuItem NavigateUrl="~/Upload_AccountData.aspx" Text="Upload_AccountData"/>
+                        <asp:MenuItem NavigateUrl="~/BUCKET1.aspx" Text="Upload_bucket1"/>
+                         <asp:MenuItem NavigateUrl="~/ENABLER.aspx" Text="Upload_PDD_DATA"/>
+                        <asp:MenuItem NavigateUrl="~/UploadAltNo.aspx" Text="UploadAltNo"/>
+                         <asp:MenuItem NavigateUrl="~/BLASTER.aspx" Text="UPLOAD_BLASTER"/>
+                        <asp:MenuItem NavigateUrl="~/transfer_to_calling_blaster.aspx" Text="Transfer to calling_BLASTER"/>--%>
+                        
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
